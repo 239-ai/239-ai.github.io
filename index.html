@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>239.AI - 专注"用得上"的AI应用团队</title>
+    <meta name="description" content="239.AI - 2人精干AI团队，专注RAG/Agent/工具接入/CV等实用AI应用，靠谱好沟通，价格灵活">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-cube"></i>
+                <span>239.AI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">首页</a></li>
+                <li><a href="#services" class="nav-link">服务</a></li>
+                <li><a href="#cases" class="nav-link">案例</a></li>
+                <li><a href="#team" class="nav-link">团队</a></li>
+                <li><a href="#contact" class="nav-link contact-btn">合作咨询</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页 Hero 区域 -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        构建<span class="highlight typing-text">实用</span>的
+                        <br>企业级AI应用
+                    </h1>
+                    <p class="hero-subtitle">
+                        专业AI应用开发团队，专注构建真正落地的智能化解决方案。从智能客服到数据洞察，从内容创作到流程自动化，让AI为您的业务创造实际价值。
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-secondary" onclick="scrollToContact()">
+                            <i class="fas fa-rocket"></i> 免费咨询方案
+                        </button>
+                        <button class="btn btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+                            <i class="fas fa-eye"></i> 查看服务
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="ai-demo-container">
+                        <div class="chat-bubble" id="chatBubble">
+                            <div class="chat-header">
+                                <span><i class="fas fa-terminal"></i> AI智能演示中心</span>
+                                <div class="chat-status">
+                                    <span class="status-dot"></span>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            <div class="chat-messages" id="chatMessages">
+                                <div class="message ai-message">
+                                    <div class="message-content">
+                                        <i class="fas fa-terminal"></i>
+                                        <span class="terminal-text">AI Demo Terminal v2.0.1 - Ready for interactive demonstrations</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="demo-buttons">
+                                <button onclick="demoKnowledgeBase()" class="demo-btn">智能知识库</button>
+                                <button onclick="demoSmartAgent()" class="demo-btn featured">Agent智能体</button>
+                                <button onclick="demoVisionDetection()" class="demo-btn">视觉检测</button>
+                                <button onclick="demoDataAnalysis()" class="demo-btn">数据分析</button>
+                                <button onclick="demoDocumentAI()" class="demo-btn">文档处理</button>
+                                <button onclick="demoWorkflowAuto()" class="demo-btn">流程自动化</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务能力展示 -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">我们的AI服务能力</h2>
+            <p class="section-subtitle">专注实用、落地的AI解决方案</p>
+            
+            <div class="services-grid">
+                <div class="service-card hover-lift" data-service="knowledge-base">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>智能知识库</h3>
+                    <p>构建企业专属知识库，快速查找信息，为员工提供精准知识支持</p>
+                    <div class="service-features">
+                        <span>✓ 智能检索</span>
+                        <span>✓ 语义理解</span>
+                        <span>✓ 知识推荐</span>
+                    </div>
+                </div>
+
+                <div class="service-card hover-lift" data-service="smart-agent">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Agent智能体</h3>
+                    <p>自主决策的AI智能体，可完成复杂多步骤任务，具备推理和执行能力</p>
+                    <div class="service-features">
+                        <span>✓ 任务规划</span>
+                        <span>✓ 工具调用</span>
+                        <span>✓ 自主执行</span>
+                    </div>
+                </div>
+
+                <div class="service-card hover-lift" data-service="vision-detection">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>视觉检测</h3>
+                    <p>图像识别、物体检测、实时监控等CV技术，让机器"看懂"世界</p>
+                    <div class="service-features">
+                        <span>✓ 物体识别</span>
+                        <span>✓ 实时监控</span>
+                        <span>✓ 异常检测</span>
+                    </div>
+                </div>
+
+                <div class="service-card hover-lift" data-service="data-analysis">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>数据分析</h3>
+                    <p>深度分析业务数据，发现隐藏规律，辅助决策制定</p>
+                    <div class="service-features">
+                        <span>✓ 销售分析</span>
+                        <span>✓ 趋势预测</span>
+                        <span>✓ 决策建议</span>
+                    </div>
+                </div>
+
+                <div class="service-card hover-lift" data-service="document-processing">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>文档处理</h3>
+                    <p>智能处理各类文档，自动提取关键信息，大幅提升文档处理效率</p>
+                    <div class="service-features">
+                        <span>✓ 内容解析</span>
+                        <span>✓ 信息提取</span>
+                        <span>✓ 智能摘要</span>
+                    </div>
+                </div>
+
+                <div class="service-card hover-lift" data-service="workflow-automation">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>流程自动化</h3>
+                    <p>自动化处理重复工作，释放员工时间专注核心业务</p>
+                    <div class="service-features">
+                        <span>✓ 订单处理</span>
+                        <span>✓ 数据录入</span>
+                        <span>✓ 报表生成</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 交互式案例展示 -->
+    <section id="cases" class="cases">
+        <div class="container">
+            <h2 class="section-title">成功案例展示</h2>
+            <p class="section-subtitle">看看我们是如何帮助客户实现AI落地的</p>
+            
+            <div class="cases-container">
+                <div class="case-tabs">
+                    <button class="case-tab active" data-case="ecommerce">电商智能客服</button>
+                    <button class="case-tab" data-case="vision">智能监控系统</button>
+                    <button class="case-tab" data-case="agent">智能运营Agent</button>
+                    <button class="case-tab" data-case="document">文档智能处理</button>
+                    <button class="case-tab" data-case="automation">业务流程自动化</button>
+                </div>
+
+                <div class="case-content">
+                    <!-- 电商案例 -->
+                    <div class="case-item active" id="ecommerce">
+                        <div class="case-visual">
+                            <div class="mock-interface ecommerce-interface">
+                                <div class="interface-header">
+                                    <span>🛒 电商智能客服系统</span>
+                                </div>
+                                <div class="chat-simulation">
+                                    <div class="sim-message customer">客户: 这款产品有什么颜色？</div>
+                                    <div class="sim-message ai">AI: 这款产品有红色、蓝色、黑色三种颜色可选，红色最受欢迎哦～</div>
+                                    <div class="sim-message customer">客户: 红色还有库存吗？</div>
+                                    <div class="sim-message ai">AI: 红色目前有库存68件，建议您尽快下单，最近销量很好呢！</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-details">
+                            <h3>电商智能客服系统</h3>
+                            <p><strong>客户需求：</strong>某电商公司希望减少人工客服成本，提升客户服务效率</p>
+                            <p><strong>解决方案：</strong>基于RAG技术构建产品知识库，训练专业客服AI</p>
+                            <div class="case-results">
+                                <div class="result-item">
+                                    <span class="result-number">85%</span>
+                                    <span class="result-label">问题自动解决率</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">60%</span>
+                                    <span class="result-label">人工成本节省</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">24/7</span>
+                                    <span class="result-label">全天候服务</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CV视觉检测案例 -->
+                    <div class="case-item" id="vision">
+                        <div class="case-visual">
+                            <div class="mock-interface vision-interface">
+                                <div class="interface-header">
+                                    <span>👁️ 智能安防监控系统</span>
+                                </div>
+                                <div class="vision-simulation">
+                                    <div class="monitor-grid">
+                                        <div class="monitor-camera">
+                                            <div class="camera-feed">
+                                                <span class="camera-label">入口监控 [边缘端处理]</span>
+                                                <div class="detection-box">
+                                                    <span class="detection-label">检测到: 人员 (安全帽缺失)</span>
+                                                    <span class="confidence">置信度: 98.4%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="alert-panel">
+                                            <div class="alert-item urgent">🚨 员工未佩戴安全帽 (入口摄像头)</div>
+                                            <div class="alert-item warning">⚠️ 区域停车超时 18分钟</div>
+                                            <div class="alert-item normal">✅ 摄像头状态正常 (延迟 60ms)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-details">
+                            <h3>智能安防监控系统</h3>
+                            <p><strong>客户需求：</strong>某工厂希望实现24小时智能安防，减少人工值守成本</p>
+                            <p><strong>技术方案：</strong>边缘端AI芯片直接处理，无需联网即可识别人员、车辆。夜间自动增强画面亮度，模糊图像智能放大变清晰，还能实时追踪目标在3D地图中的位置轨迹</p>
+                            <div class="case-results">
+                                <div class="result-item">
+                                    <span class="result-number">99.2%</span>
+                                    <span class="result-label">检测准确率</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">8毫秒</span>
+                                    <span class="result-label">边缘端响应</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">4K→8K</span>
+                                    <span class="result-label">超分辨率增强</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Agent智能体案例 -->
+                    <div class="case-item" id="agent">
+                        <div class="case-visual">
+                            <div class="mock-interface agent-interface">
+                                <div class="interface-header">
+                                    <span>🤖 智能运营Agent系统</span>
+                                </div>
+                                <div class="agent-simulation">
+                                    <div class="agent-workflow">
+                                        <div class="agent-step completed">
+                                            <i class="fas fa-bell"></i>
+                                            <span>监控到转化率异常</span>
+                                        </div>
+                                        <div class="agent-step completed">
+                                            <i class="fas fa-tools"></i>
+                                            <span>调用analytics_tool分析</span>
+                                        </div>
+                                        <div class="agent-step active">
+                                            <i class="fas fa-cogs"></i>
+                                            <span>调用ad_optimizer优化</span>
+                                        </div>
+                                        <div class="agent-step pending">
+                                            <i class="fas fa-file-alt"></i>
+                                            <span>调用report_generator汇报</span>
+                                        </div>
+                                    </div>
+                                    <div class="agent-output">
+                                        <div class="output-item">
+                                            🚨 自主发现: 下午3点转化率从2.1%跌至0.8%
+                                        </div>
+                                        <div class="output-item">
+                                            🔍 分析结果: 竞品投放同关键词，CPC上涨40%
+                                        </div>
+                                        <div class="output-item">
+                                            ⚙️ 自动执行: 已调整15个关键词出价，新增3个长尾词
+                                        </div>
+                                        <div class="output-item">
+                                            📈 实时监测: 转化率已恢复至2.3%，问题解决
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-details">
+                            <h3>智能运营Agent系统</h3>
+                            <p><strong>客户需求：</strong>某电商企业希望Agent能自主监控运营状况，发现问题后自动调用工具解决</p>
+                            <p><strong>Agent特色：</strong>全天候自主工作，发现转化率异常时主动调用数据分析工具找原因，再调用广告优化工具调整投放，最后调用报告生成工具汇报结果，整个过程无需人工干预</p>
+                            <div class="case-results">
+                                <div class="result-item">
+                                    <span class="result-number">24/7</span>
+                                    <span class="result-label">自主监控运行</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">15个</span>
+                                    <span class="result-label">可调用工具</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">3分钟</span>
+                                    <span class="result-label">问题发现到解决</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 文档案例 -->
+                    <div class="case-item" id="document">
+                        <div class="case-visual">
+                            <div class="mock-interface document-interface">
+                                <div class="interface-header">
+                                    <span>📄 文档智能处理系统</span>
+                                </div>
+                                <div class="document-simulation">
+                                    <div class="doc-upload">
+                                        <i class="fas fa-file-pdf"></i>
+                                        <span>合同文档.pdf</span>
+                                        <div class="upload-progress"></div>
+                                    </div>
+                                    <div class="doc-analysis">
+                                        <div class="analysis-item">✓ 关键信息提取完成</div>
+                                        <div class="analysis-item">✓ 风险条款识别完成</div>
+                                        <div class="analysis-item">✓ 智能摘要生成完成</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-details">
+                            <h3>文档智能处理系统</h3>
+                            <p><strong>客户需求：</strong>律师事务所需要快速处理大量合同文档</p>
+                            <p><strong>解决方案：</strong>OCR+NLP技术实现文档自动解析和关键信息提取</p>
+                            <div class="case-results">
+                                <div class="result-item">
+                                    <span class="result-number">90%</span>
+                                    <span class="result-label">处理时间节省</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">95%</span>
+                                    <span class="result-label">信息提取准确率</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">1000+</span>
+                                    <span class="result-label">日处理文档量</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 自动化案例 -->
+                    <div class="case-item" id="automation">
+                        <div class="case-visual">
+                            <div class="mock-interface automation-interface">
+                                <div class="interface-header">
+                                    <span>⚙️ 业务流程自动化</span>
+                                </div>
+                                <div class="workflow-simulation">
+                                    <div class="workflow-step active">
+                                        <span>1. 邮件接收</span>
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="workflow-step active">
+                                        <span>2. 内容分析</span>
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="workflow-step processing">
+                                        <span>3. 智能分类</span>
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                    </div>
+                                    <div class="workflow-step completed">
+                                        <span>4. 自动回复</span>
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="workflow-step processing">
+                                        <span>5. 系统更新</span>
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                    </div>
+                                    <div class="workflow-step">
+                                        <span>6. 统计分析</span>
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-details">
+                            <h3>业务流程自动化系统</h3>
+                            <p><strong>客户需求：</strong>企业希望自动化处理客户邮件和工单系统</p>
+                            <p><strong>解决方案：</strong>AI Agent自动分析邮件内容，智能路由和响应</p>
+                            <div class="case-results">
+                                <div class="result-item">
+                                    <span class="result-number">75%</span>
+                                    <span class="result-label">工作量减少</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">2小时</span>
+                                    <span class="result-label">平均响应时间</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">98%</span>
+                                    <span class="result-label">客户满意度</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title">239.AI 专业交付团队</h2>
+            <p class="section-subtitle">值得信赖的企业级 AI 解决方案伙伴</p>
+            
+            <div class="team-intro">
+                <div class="team-philosophy">
+                    <h3>我们的核心优势</h3>
+                    <div class="philosophy-grid">
+                        <div class="philosophy-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>技术创新</h4>
+                            <p>前沿算法 + 工程最佳实践，持续输出高水准 AI 方案</p>
+                        </div>
+                        <div class="philosophy-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>安全合规</h4>
+                            <p>严格遵循数据安全与隐私法规，保障企业信息安全</p>
+                        </div>
+                        <div class="philosophy-item">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>质量保障</h4>
+                            <p>完善的测试与监控体系，确保项目稳定可靠运行</p>
+                        </div>
+                        <div class="philosophy-item">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <h4>长期陪伴</h4>
+                            <p>项目交付后持续迭代，提供 7×24 专业技术支持</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 合作咨询 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">开始合作</h2>
+            <p class="section-subtitle">随时联系，开启企业级 AI 赋能之旅</p>
+            <div class="contact-wrapper">
+                <div class="contact-main-card">
+                    <div class="contact-header">
+                        <i class="fas fa-comments"></i>
+                        <h3>联系我们</h3>
+                        <p>专业团队为您提供一对一咨询服务</p>
+                    </div>
+                    
+                    <div class="contact-methods-grid">
+                        <div class="contact-method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>电话咨询</h4>
+                                <a href="tel:17600010865" class="method-value">176-0001-0865</a>
+                                <span class="method-note">工作时间：9:00-18:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>邮件咨询</h4>
+                                <a href="mailto:tech@239.ai" class="method-value">tech@239.ai</a>
+                                <span class="method-note">24小时内回复</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method-item wechat-special">
+                            <div class="method-icon">
+                                <i class="fab fa-weixin"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>微信咨询</h4>
+                                <div class="wechat-qr-container">
+                                    <img src="wx.jpg" alt="WeChat QR" class="wechat-qr" />
+                                    <span class="method-note">扫码添加好友</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-cta">
+                        <p>✨ 免费咨询 · 快速响应 · 专业方案</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-robot"></i>
+                    <span>239.AI</span>
+                </div>
+                <p>专注"用得上"的AI应用 | 靠谱好沟通的AI团队</p>
+                <div class="footer-links">
+                    <a href="#services">服务</a>
+                    <a href="#cases">案例</a>
+                    <a href="#team">团队</a>
+                    <a href="#contact">合作</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 239.AI. 让AI为您的业务赋能.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 服务演示弹窗 -->
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="demoContent"></div>
+        </div>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html> 
